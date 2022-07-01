@@ -1,24 +1,19 @@
 {
-  "name": "cimso-test",
-  "version": "1.0.0",
-  "description": "Assignment",
-  "main": "index.js",
-
+  "name": "payload",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/diegoallies/cimso-test.git"
-  },
-  "author": "Diego Allies",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/diegoallies/cimso-test/issues"
-  },
-  "homepage": "https://github.com/diegoallies/cimso-test#readme",
   "dependencies": {
-    "node-fetch": "^3.2.6"
+    "axios": "^0.27.2",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0"
   }
 }
+
