@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 fetch("https://apitest.cimsoweb.com/api/innterchange/unit_type_info_request")
   .then((res) => res.json())
   .then((pokemonList) => {
