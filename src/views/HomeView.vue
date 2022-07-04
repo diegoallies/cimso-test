@@ -7,14 +7,17 @@
                   <div id=col class="col" v-for="payloads in payload" :key="payloads">
                    <div class="card" style="width: 18rem;">
                       <div class="card-body">
-                         <h5 class="card-title">Cimso</h5>
+                         <h3 class="card-title">Booking</h3>
                          <span class="line"></span>
                           <div class="card-text">      
-                              <p> Booking Unit Id:</p> <p> {{payloads["Booking Unit ID"]}}</p>
-                              <p> Booking Unit Number:</p> <p> {{payloads["Booking Unit Number"]}}</p>
-                              <p> Booking Unit Name:</p> <p> {{payloads["Booking Unit Name"]}}</p>
-                              <p> Booking Unit Id:</p> <p> {{payloads["Booking Unit ID"]}}</p>
-                          </div>
+                              <p>Unit Id:</p> <p> {{payloads["Booking Unit ID"]}}</p>
+                              <p>Unit Number:</p> <p> {{payloads["Booking Unit Number"]}}</p>
+                              <p>Unit Name:</p> <p> {{payloads["Booking Unit Name"]}}</p> 
+                              <p>Unit Type Id:</p> <p> {{payloads["Unit Type ID"]}}</p>
+                              <p>Unit Type Id:</p> <p> {{payloads["Unit Type Description"]}}</p>
+
+
+                              </div>
                       </div>
                    </div>
                   </div>
@@ -22,47 +25,8 @@
               </div>
       </div>
   </div>
-      <footer>
-        <div id="feets" class="container">
-            <div class="row align-items-start">
-              <div class="col">
-                  <h4>Bookings</h4> 
-                  <p>Lorem ipsum dolor sit .</p>   
-                  <p>Lorem ipsum dolor sit .</p>   
-                  <p>Lorem ipsum dolor sit .</p>   
-              </div>
-              <div class="col">
-                  <h4>Services</h4> 
-                  <p>Being innovative.</p>   
-                  <p>Being creative.</p>   
-                  <p>Being amazing.</p>   
-              </div>
-              <div class="col">
-                  <h4>Contact</h4>   
-                  <p>email@gmail.com</p>   
-                  <p>123 345 6789</p>   
-                  <p>Cape Town, South Africa</p>   
-              </div>
-            </div>
-        </div>
-      </footer>
+
 </div>
- <div v-else>
-  <h1>
-    Loading...
-  </h1>
-    <div class="loader">
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-        <span class="loader-block"></span>
-    </div>
- </div>
 
 </template>
 <script>
@@ -77,16 +41,32 @@ export default {
     }
   },
   
-  mounted(){ 
-    axios.get('https://apitest.cimsoweb.com/api/innterchange/get_booking_units_request')
-    .then(res => {
-      this.payload = res.data
-      let bookings= "Booking Unit ID"
-      console.log(this.payload["Booking Units"])
+mounted(){
+
+let one =
+  "https://apitest.cimsoweb.com/api/innterchange/unit_type_info_request";
+let two =
+  "https://apitest.cimsoweb.com/api/innterchange/get_booking_units_request";
+
+
+const requestOne = axios.get(one);
+const requestTwo = axios.get(two);
+
+axios
+  .all([requestOne, requestTwo])
+  .then(
+    axios.spread((...responses) => {
+      const responseOne = responses[0];
+      const responseTwo = responses[1];
+
+      // use/access the results
+      console.log(responseOne, responseTwo);
     })
-    .catch(err => {
-      console.error(err); 
-    })
+  )
+  .catch(errors => {
+    // react on errors.
+    console.error(errors);
+  }); 
 }
 }
 </script>

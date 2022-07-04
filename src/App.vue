@@ -23,13 +23,13 @@ nav a {
   }
 nav a:hover {
   font-weight: 100;
-  color: #2c3e50;
+  color: #19f1e7;
 }
 nav a.router-link-exact-active {
-  color: #e68d22;
+  color: #3b104e;
 }
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin:0;
   padding:0;
 }
