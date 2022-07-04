@@ -1,32 +1,17 @@
 <template>
-<div v-if="payload">
-    <div v-for="data in payload" :key="data">
-      <div v-for="payload in data" :key="payload">
-              <div class="container">
-                <div class="row">
-                  <div id=col class="col" v-for="payloads in payload" :key="payloads">
-                   <div class="card" style="width: 18rem;">
-                      <div class="card-body">
-                         <h3 class="card-title">Booking</h3>
-                         <span class="line"></span>
-                          <div class="card-text">      
-                              <p>Unit Id:</p> <p> {{payloads["Booking Unit ID"]}}</p>
-                              <p>Unit Number:</p> <p> {{payloads["Booking Unit Number"]}}</p>
-                              <p>Unit Name:</p> <p> {{payloads["Booking Unit Name"]}}</p> 
-                              <p>Unit Type Id:</p> <p> {{payloads["Unit Type ID"]}}</p>
-                              <p>Unit Type Id:</p> <p> {{payloads["Unit Type Description"]}}</p>
+
+<div v-for="units in unit_type" :key="units" >
+
+<div v-for="unit in unit_type2" :key="unit">
 
 
-                              </div>
-                      </div>
-                   </div>
-                  </div>
-                </div>
-              </div>
-      </div>
-  </div>
 
+  {{units}}
+  {{unit}}
 </div>
+</div>
+
+
 
 </template>
 <script>
@@ -37,7 +22,7 @@ export default {
   },
   data(){
     return{
-     payload:null
+     unit_type:[]
     }
   },
   
@@ -58,9 +43,16 @@ axios
     axios.spread((...responses) => {
       const responseOne = responses[0];
       const responseTwo = responses[1];
+  // .then(res => {
+  //     this.payload = res.data
+  //     let bookings= "Booking Unit ID"
+  //     let units= "Unit Types"
+  //     console.log(this.payload["Booking Units", "Unit Types"])
 
       // use/access the results
-      console.log(responseOne, responseTwo);
+      this.unit_type = responseOne.data.payload["Unit Types"]    
+      this.unit_type2 = responseTwo.data.payload["Booking Units"]    
+
     })
   )
   .catch(errors => {
