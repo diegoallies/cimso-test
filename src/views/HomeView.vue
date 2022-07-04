@@ -21,7 +21,6 @@
 <p> Unit Count : {{units["Unit Count"]}} </p>
 <p> Unit Type Image UIDs : {{units["Unit Type Image UIDs"]}} </p>
 
-
   </div>
   <div class="col-4 booker">
 
@@ -34,11 +33,7 @@
 <p> Booking Unit Number : {{units["Booking Unit Number"]}} </p>
 <p> Unit Type ID : {{units["Unit Type ID"]}} </p>
 
-
-
 </div>
-
-
 
 <div class="divider" ></div>
   </div>
@@ -96,7 +91,6 @@ axios
 
       console.log(responseTwo.data.payload["Booking Units"]);
   
-
     })
   )
   .catch(errors => {
@@ -116,6 +110,8 @@ axios
   border: 5px ridge gray;
   margin: 0;
   background-color: white;
+  -webkit-box-shadow: -5px 14px 15px 5px #000000; 
+box-shadow: -5px 14px 15px 5px #000000;
 }
 
 .uniter {
@@ -127,6 +123,8 @@ axios
   margin-left: 10%;
   margin-bottom: 10%;
   background-color: white;
+  -webkit-box-shadow: -5px 14px 15px 5px #000000; 
+box-shadow: -5px 14px 15px 5px #000000;
 }
 
 h1 {
@@ -141,6 +139,5 @@ h1 {
   margin-left: 10%;
   margin-right: 10%;
 }
-
 
 </style>>
