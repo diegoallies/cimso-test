@@ -36,12 +36,12 @@
 
 
 
-  </div>
 </div>
 
 
 
-
+<div class="divider" ></div>
+  </div>
 </div>
 
 </template>
@@ -113,18 +113,33 @@ axios
   width: 25%;
   height: 30%;
   padding: 10px;
-  border: 5px solid gray;
+  border: 5px ridge gray;
   margin: 0;
+  background-color: white;
 }
 
 .uniter {
-  width: 50%;
+  width: 45%;
   height: 60%;
   padding: 10px;
-  border: 5px solid gray;
+  border: 5px ridge gray;
   margin-right: 10%;
   margin-left: 10%;
-  margin-bottom: 20%;
+  margin-bottom: 10%;
+  background-color: white;
+}
+
+h1 {
+  color: black;
+}
+
+.divider {
+  border-bottom: 5px double grey;
+  margin-top: -55%;
+  margin-bottom: 5%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 
