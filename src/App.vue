@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Bookings</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
@@ -14,17 +14,23 @@
   text-align: center;
   color: #2c3e50;
 }
-
 nav {
   padding: 30px;
 }
-
 nav a {
   font-weight: bold;
+  text-decoration: none;
+  }
+nav a:hover {
+  font-weight: 100;
   color: #2c3e50;
 }
-
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #e68d22;
+}
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  padding:0;
 }
 </style>
