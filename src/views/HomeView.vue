@@ -10,6 +10,8 @@
 </h1> 
 
 <p> Unit Type Id : {{units["Unit Type ID"]}} </p>
+
+
 <p> Unit Type Code : {{units["Unit Type Code"]}} </p>
 <p> Unit Type Description : {{units["Unit Type Description"]}} </p>
 <p> Unit Type Category : {{units["Unit Type Category"]}} </p>
@@ -82,8 +84,6 @@ axios
         const unitType = units.find(unit => unit["Unit Type ID"] === booking['Unit Type ID'])
         return {...booking, ...unitType}
       })
-
-      // console.log(completeData, units, bookings, imges)
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                            for future reference                                        //
