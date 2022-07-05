@@ -79,9 +79,7 @@ axios
       const bookings = responseTwo.data.payload["Booking Units"]
       // const imges = responseThree
 
-      // console.log(units);
-      // console.log(bookings);
-      // console.log(imges)
+      
       
       this.completeData = bookings.map(booking => {
         const unitType = units.find(unit => unit["Unit Type ID"] === booking['Unit Type ID'])
@@ -89,12 +87,12 @@ axios
       })
 
       // console.log(completeData)
-      // use/access the results
-      // this.unit_type = responseOne.data.payload["Unit Types"]    
-      // this.unit_type2 = responseTwo.data.payload["Booking Units"]
+      // console.log(units);
+      // console.log(bookings);
+      // console.log(imges)
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-//             for future reference 
+//                            for future reference                                        //
 
 //       image: connected to file input
 // base64: to keep result of conversion
