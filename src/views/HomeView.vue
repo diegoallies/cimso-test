@@ -131,6 +131,7 @@ axios
 
 <style scoped>
 
+
 .booker {
   width: 25%;
   height: 30%;
