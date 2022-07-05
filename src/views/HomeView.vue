@@ -79,8 +79,8 @@ axios
       const bookings = responseTwo.data.payload["Booking Units"]
       // const imges = responseThree
 
-      console.log(units);
-      console.log(bookings);
+      // console.log(units);
+      // console.log(bookings);
       // console.log(imges)
       
       this.completeData = bookings.map(booking => {
@@ -88,7 +88,7 @@ axios
         return {...booking, ...unitType}
       })
 
-      console.log(completeData)
+      // console.log(completeData)
       // use/access the results
       // this.unit_type = responseOne.data.payload["Unit Types"]    
       // this.unit_type2 = responseTwo.data.payload["Booking Units"]
