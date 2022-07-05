@@ -83,10 +83,7 @@ axios
         return {...booking, ...unitType}
       })
 
-      // console.log(completeData)
-      // console.log(units);
-      // console.log(bookings);
-      // console.log(imges)
+      // console.log(completeData, units, bookings, imges)
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                            for future reference                                        //
