@@ -9,7 +9,7 @@
   Unit Type Info
 </h1> 
 
-<p> Unit Type Id : {{units["Unit Type ID"]}}</p>
+<p> Unit Type Id : {{units["Unit Type ID"]}} </p>
 <p> Unit Type Code : {{units["Unit Type Code"]}} </p>
 <p> Unit Type Description : {{units["Unit Type Description"]}} </p>
 <p> Unit Type Category : {{units["Unit Type Category"]}} </p>
@@ -61,7 +61,6 @@ let two =
 let three =
   "https://apitest.cimsoweb.com/api/innterchange/binary_object_request";
 
-
 const requestOne = axios.get(one);
 const requestTwo = axios.get(two);
 // const requestThree = axios.get(three);
@@ -79,8 +78,6 @@ axios
       const bookings = responseTwo.data.payload["Booking Units"]
       // const imges = responseThree
 
-      
-      
       this.completeData = bookings.map(booking => {
         const unitType = units.find(unit => unit["Unit Type ID"] === booking['Unit Type ID'])
         return {...booking, ...unitType}
@@ -94,7 +91,7 @@ axios
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                            for future reference                                        //
 
-//       image: connected to file input
+// image: connected to file input
 // base64: to keep result of conversion
 // Then I set a watcher on image, to update base64 variable on image's changes:
  
@@ -142,7 +139,7 @@ axios
   margin: 0;
   background-color: white;
   -webkit-box-shadow: -5px 14px 15px 5px #000000; 
-box-shadow: -5px 14px 15px 5px #000000;
+  box-shadow: -5px 14px 15px 5px #000000;
 }
 
 .uniter {
@@ -155,7 +152,7 @@ box-shadow: -5px 14px 15px 5px #000000;
   margin-bottom: 10%;
   background-color: white;
   -webkit-box-shadow: -5px 14px 15px 5px #000000; 
-box-shadow: -5px 14px 15px 5px #000000;
+  box-shadow: -5px 14px 15px 5px #000000;
 }
 
 h1 {
