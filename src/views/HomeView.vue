@@ -116,6 +116,11 @@ axios
 //     this.base64 = event.target.result;
 //   }
 //   reader.readAsDataURL(FileObject);
+
+
+//  i have attempted to do the bonus question but the api either gives me error code 999 or it
+//  says i need access to admin so im currently usable to complete it , although i have a
+//  possible solution as to how i wouldve maken it work above.
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 
