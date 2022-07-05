@@ -58,25 +58,31 @@ let one =
   "https://apitest.cimsoweb.com/api/innterchange/unit_type_info_request";
 let two =
   "https://apitest.cimsoweb.com/api/innterchange/get_booking_units_request";
+let three =
+  "https://apitest.cimsoweb.com/api/innterchange/binary_object_request";
 
 
 const requestOne = axios.get(one);
 const requestTwo = axios.get(two);
+// const requestThree = axios.get(three);
 
 axios
   .all([requestOne, requestTwo])
   .then(
     axios.spread((...responses) => {
+
       const responseOne = responses[0];
       const responseTwo = responses[1];
-
-
+      // const responseThree = responses[2];
+      
       const units = responseOne.data.payload["Unit Types"]    
       const bookings = responseTwo.data.payload["Booking Units"]
+      // const imges = responseThree
 
       console.log(units);
       console.log(bookings);
-
+      // console.log(imges)
+      
       this.completeData = bookings.map(booking => {
         const unitType = units.find(unit => unit["Unit Type ID"] === booking['Unit Type ID'])
         return {...booking, ...unitType}
@@ -84,13 +90,35 @@ axios
 
       console.log(completeData)
       // use/access the results
-      this.unit_type = responseOne.data.payload["Unit Types"]    
-      this.unit_type2 = responseTwo.data.payload["Booking Units"]
-      this.unit_type_1_test = responseOne.data.payload["Unit Type ID"]
-      this.unit_type_2_test = responseTwo.data.payload["Unit Type ID"]
+      // this.unit_type = responseOne.data.payload["Unit Types"]    
+      // this.unit_type2 = responseTwo.data.payload["Booking Units"]
 
-      console.log(responseTwo.data.payload["Booking Units"]);
-  
+////////////////////////////////////////////////////////////////////////////////////////////
+//             for future reference 
+
+//       image: connected to file input
+// base64: to keep result of conversion
+// Then I set a watcher on image, to update base64 variable on image's changes:
+ 
+// image: function (newVal, oldVal) {
+//   if(newVal) {
+//     this.createBase64Image(newVal);
+//   } else {
+//     this.base64 = null;
+//   }
+// }
+ 
+// And at the end, I define a function to convert image to base64 and update base64 variable:
+ 
+// createBase64Image: function(FileObject) {
+//   const reader = new FileReader();
+//   reader.onload = (event) => {
+//     this.base64 = event.target.result;
+//   }
+//   reader.readAsDataURL(FileObject);
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
     })
   )
   .catch(errors => {
